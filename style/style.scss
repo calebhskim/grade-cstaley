@@ -1,0 +1,44 @@
+@font-face{
+	font-family: ProximaNova-Light;
+	src: url("../Font/ProximaNova-Light.otf");
+}
+
+$font-stack: ProximaNova-Light;
+
+body { 
+
+	font-family: $font-stack;
+	background-image: url();
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+
+	#buttons {
+		text-align: center;
+		button {
+			width: 110px;
+			margin-bottom: 5px;
+			margin-right: 5px;
+		} 
+	}
+
+	.jumbotron {
+  		text-align: center;
+  		background-color: transparent;
+  		margin-bottom: 0px;
+	}
+
+	.jumbotron .btn {
+  		padding: 14px 24px;
+  		font-size: 21px;
+	}
+
+	.footer {
+	  padding-top: 40px;
+	  padding-bottom: 40px;
+	  margin-top: 40px;
+	  border-top: 1px solid #eee;
+	}
+
+}
