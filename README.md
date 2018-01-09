@@ -3,7 +3,7 @@ Clinton A. Staley.
 This is a sound board of the voice of Clinton A. Staley.
 
 ## Development
-To run the site locally you will need to install [npm]() or [yarn](). And then depending on which one you installed run the following:  
+To run the site locally you will need to install [npm](https://www.npmjs.com/get-npm) or [yarn](https://yarnpkg.com/lang/en/docs/install/). Navigate to the root of the project and then depending on which package manager you installed run the following:  
 npm
 ```
 npm install && npm run start
