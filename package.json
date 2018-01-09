@@ -2,8 +2,10 @@
   "name": "grade-cstaley",
   "version": "2.0.0",
   "private": true,
+  "homepage": "https://calebhskim.github.io/grade-cstaley",
   "dependencies": {
     "axios": "^0.16.2",
+    "gh-pages": "^1.1.0",
     "lodash": "^4.17.4",
     "muicss": "^0.9.27",
     "react": "^16.0.0",
@@ -17,6 +19,8 @@
     "redux-thunk": "^2.2.0"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",

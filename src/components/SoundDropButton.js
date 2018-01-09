@@ -57,7 +57,7 @@ class SoundDropButton extends Component {
         x
         </div>
       }
-      {filename.replace(new RegExp('_', 'g'), ' ')}
+      {filename.replace(new RegExp('_', 'g'), ' ').replace('.wav', '')}
     </div>);
   }
 }

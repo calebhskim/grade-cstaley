@@ -56,7 +56,7 @@ class SoundButton extends Component {
         }}
         className='soundButton'
       >
-        {filename.replace(new RegExp('_', 'g'), ' ')}
+        {filename.replace(new RegExp('_', 'g'), ' ').replace('.wav', '')}
       </div>
     );
   }
