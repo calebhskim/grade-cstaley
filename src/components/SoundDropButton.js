@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 import removeSound from '../actions/removeSound';
 import rgb from '../utils/rgb';
+import play from '../actions/play';
 
 const left = {
   r: 17,
@@ -22,7 +23,7 @@ class SoundDropButton extends Component {
     super(props);
     this.state = {
       hover: false,
-      rightHover: false,
+      rightHover: false, // hover state of x button
     };
   }
 
@@ -43,6 +44,7 @@ class SoundDropButton extends Component {
       }}
       onMouseEnter={() => { this.setState({ hover: true })}}
       onMouseLeave={() => { this.setState({ hover: false })}}
+      onClick={() => rightHover ? '' : this.props.play(filename)}
     >
       {
         hover && <div
@@ -66,12 +68,14 @@ SoundDropButton.propTypes = {
   filename: PropTypes.string,
   gradient: PropTypes.number,
   removeSound: PropTypes.func,
+  play: PropTypes.func,
 };
 
 const mapStateToProps = () => ({});
 
 const mapDispatchToProps = {
   removeSound,
+  play,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(SoundDropButton);

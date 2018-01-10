@@ -8,12 +8,7 @@ import flow from 'lodash/flow';
 import dragTypes from '../constants/dragTypes';
 import SoundDropButton from '../components/SoundDropButton';
 
-const soundTarget = {
-  drop(props) {
-    // Add new sound
-    console.log("Dropped :: ", props);
-  }
-};
+const soundTarget = {};
 
 function collect(connect, monitor) {
   return {

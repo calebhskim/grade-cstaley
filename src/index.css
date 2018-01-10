@@ -108,6 +108,12 @@ body {
     overflow: hidden;
 }
 
+.soundPlayButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .sounds {
   display: flex;
   flex-wrap: wrap;
@@ -117,4 +123,9 @@ body {
 
 .title {
   margin: 10px;
+}
+
+.video-overlay-play-button {
+  height: 25px;
+  width: 25px;
 }

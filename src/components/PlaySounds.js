@@ -27,12 +27,14 @@ class PlaySounds extends Component {
         style={{
           backgroundColor: `rgb(${r}, ${g}, ${b})`,
           boxShadow: this.state.hover && soundsToPlay ? 'rgba(0, 0, 0, 0.32) 0px 3px 10px, rgba(0, 0, 0, 0.46) 0px 3px 10px' : '',
-          color: 'white',
           margin: '5px'
         }}
-        className='soundButton'
+        className='soundButton soundPlayButton'
       >
-        >
+        <svg className="video-overlay-play-button" viewBox="0 0 200 200" alt="Play sounds">
+          <circle cx="100" cy="100" r="90" fill="none" strokeWidth="15" stroke="#000"/>
+          <polygon points="70, 55 70, 145 145, 100" fill="#000"/>
+        </svg>
       </div>
     );
   }
