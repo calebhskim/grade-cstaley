@@ -33,7 +33,7 @@ const collect = (connect, monitor) => {
 }
 
 // Wrap Button with Drag logic
-class Card extends Component {
+class Sound extends Component {
   render() {
     const { connectDragSource } = this.props;
     return connectDragSource(
@@ -44,7 +44,7 @@ class Card extends Component {
   }
 }
 
-Card.propTypes = {
+Sound.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node
@@ -54,4 +54,4 @@ Card.propTypes = {
 };
 
 
-export default DragSource(dragTypes.SOUND, cardSource, collect)(Card);
+export default DragSource(dragTypes.SOUND, cardSource, collect)(Sound);

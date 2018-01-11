@@ -76,36 +76,32 @@ body {
 }
 
 .soundButton {
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 18px;
-    text-transform: uppercase;
-    color: rgba(0,0,0,.87);
-    -webkit-transition: all .2s ease-in-out;
-    transition: all .2s ease-in-out;
-    display: inline-block;
-    height: 36px;
-    padding: 0 26px;
-    margin: 6px 0;
-    border: none;
-    border-radius: 2px;
-    cursor: pointer;
-    -ms-touch-action: manipulation;
-    touch-action: manipulation;
-    background-image: none;
-    text-align: center;
-    line-height: 36px;
-    vertical-align: middle;
-    white-space: nowrap;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    font-size: 14px;
-    font-family: inherit;
-    letter-spacing: .03em;
-    position: relative;
-    overflow: hidden;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: all .2s ease-in-out;
+  display: inline-block;
+  height: 36px;
+  padding: 0 26px;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  background-image: none;
+  text-align: center;
+  line-height: 36px;
+  vertical-align: middle;
+  white-space: nowrap;
+  user-select: none;
+  font-size: 14px;
+  font-family: inherit;
+  letter-spacing: .03em;
+  position: relative;
+  overflow: hidden;
+}
+
+.soundDropButtonContainer {
+  margin: 5px; 
 }
 
 .soundPlayButton {

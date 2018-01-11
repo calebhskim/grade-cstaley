@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import Card from './Card';
+import Sound from './Sound';
 import dropSound from '../actions/dropSound';
 import fetchSound from '../actions/fetchSound';
 import SoundButton from './SoundButton';
@@ -12,7 +12,7 @@ class Sounds extends Component {
     return (
       <div className='sounds'>
         {sounds.map((el, i) => (
-          <Card
+          <Sound
             key={i}
             index={i}
             filename={el}
@@ -25,7 +25,7 @@ class Sounds extends Component {
               filename={el}
               gradient={i / sounds.length}
             />
-          </Card>
+          </Sound>
         ))}
       </div>
     );

@@ -40,7 +40,6 @@ class SoundDropButton extends Component {
       style={{
         backgroundColor: hover ? `rgba(${r}, ${g}, ${b}, 0.5)` : `rgb(${r}, ${g}, ${b})`,
         color: 'white',
-        margin: '5px'
       }}
       onMouseEnter={() => { this.setState({ hover: true })}}
       onMouseLeave={() => { this.setState({ hover: false })}}
