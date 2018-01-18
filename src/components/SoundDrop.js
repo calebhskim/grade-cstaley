@@ -6,7 +6,9 @@ import { DropTarget } from 'react-dnd';
 import flow from 'lodash/flow';
 
 import dragTypes from '../constants/dragTypes';
+import dropSoundSort from '../actions/dropSoundSort';
 import moveSound from '../actions/moveSound';
+import recordIndices from '../actions/recordIndices';
 import SoundDropButtonContainer from '../components/SoundDropButtonContainer';
 
 const soundTarget = {};
@@ -20,7 +22,14 @@ function collect(connect, monitor) {
 
 class SoundDrop extends Component {
   render() {
-    const { connectDropTarget, droppedSounds, isOver, moveSound } = this.props;
+    const {
+      connectDropTarget,
+      dropSoundSort,
+      droppedSounds,
+      isOver,
+      moveSound,
+      recordIndices,
+    } = this.props;
 
     return connectDropTarget(
       <div
@@ -34,10 +43,12 @@ class SoundDrop extends Component {
           return (
             <SoundDropButtonContainer
               key={i}
+              dropSoundSort={dropSoundSort}
               filename={el.filename}
               gradient={gradient}
               index={i}
               moveSound={moveSound}
+              recordIndices={recordIndices}
             />
           )
         }) : 'Drop sounds here!'}
@@ -48,8 +59,10 @@ class SoundDrop extends Component {
 
 SoundDrop.propTypes = {
   connectDropTarget: PropTypes.func.isRequired,
+  dropSoundSort: PropTypes.func,
   droppedSounds: PropTypes.arrayOf(PropTypes.object),
   moveSound: PropTypes.func,
+  recordIndices: PropTypes.func,
 };
 
 const mapStateToProps = (state) => {
@@ -60,7 +73,9 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = {
+  dropSoundSort,
   moveSound,
+  recordIndices,
 };
 
 export default flow(

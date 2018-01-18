@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { findDOMNode } from 'react-dom';
 import { DragSource, DropTarget } from 'react-dnd'
 
 import flow from 'lodash/flow';
@@ -14,6 +15,9 @@ const soundSource = {
 			index: props.index,
 		}
 	},
+  endDrag(props, monitor, component) {
+    props.dropSoundSort();
+  },
 }
 
 const soundTarget = {
@@ -26,7 +30,25 @@ const soundTarget = {
 			return;
 		}
 
-		// Time to actually perform the action
+    // Determine rectangle on screen
+		const hoverBoundingRect = findDOMNode(component).getBoundingClientRect();
+    
+		// Determine mouse position
+		const clientOffset = monitor.getClientOffset();
+    
+    // Determine internal hover bouding box for performing move
+		const horizontalPad = (hoverBoundingRect.right - hoverBoundingRect.left) / 6;
+		const verticalPad = (hoverBoundingRect.bottom - hoverBoundingRect.top) / 6;
+
+		// Only perform the move when the cursor has crossed into a smaller area within the box
+    if (clientOffset.x > hoverBoundingRect.right - horizontalPad ||
+      clientOffset.x < hoverBoundingRect.left + horizontalPad ||
+      clientOffset.y < hoverBoundingRect.top + verticalPad ||
+      clientOffset.y > hoverBoundingRect.bottom - verticalPad) {
+      return;
+    }
+    
+    props.recordIndices(dragIndex, hoverIndex);
 		props.moveSound(dragIndex, hoverIndex);
 
 		// Note: we're mutating the monitor item here!
@@ -73,6 +95,7 @@ class SoundDropButtonContainer extends Component {
 SoundDropButtonContainer.propTypes = {
   connectDragSource: PropTypes.func.isRequired,
 	connectDropTarget: PropTypes.func.isRequired,
+  dropSoundSort: PropTypes.func,
   filename: PropTypes.string,
   gradient: PropTypes.number,
   index: PropTypes.number,
