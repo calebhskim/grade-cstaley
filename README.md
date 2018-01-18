@@ -1,4 +1,4 @@
-# gradec-staley
+# grade-cstaley
 Clinton A. Staley. 
 This is a sound board of the voice of Clinton A. Staley.
 
