@@ -7,14 +7,13 @@ const {
 export default function fetchSound(filename) {
   return (dispatch, getState) => {
     const {
-      config: { urls },
+      config: { urls }, // base url for sounds in s3 bucket
       sounds
     } = getState();
 
     if (!sounds[filename]) {
       const newSound = {};
       newSound[filename] = new Audio(`${urls.sounds}/${filename}`);
-      // newSound[filename].play();
       return Promise.resolve(
         dispatch({
           type: FETCH_SOUND_SUCCESS,
@@ -22,10 +21,6 @@ export default function fetchSound(filename) {
         })
       );
     }
-    // else {
-    //   return Promise.resolve(sounds[filename].play());
-    // }
-    //
     return Promise.resolve();
   }
 };
