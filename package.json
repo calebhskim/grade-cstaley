@@ -4,7 +4,7 @@
   "private": true,
   "homepage": ".",
   "dependencies": {
-    "axios": "^0.16.2",
+    "axios": "^0.21.1",
     "gh-pages": "^1.1.0",
     "lodash": "^4.17.4",
     "muicss": "^0.9.27",
