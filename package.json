@@ -6,7 +6,7 @@
   "dependencies": {
     "axios": "^0.16.2",
     "gh-pages": "^1.1.0",
-    "lodash": "^4.17.4",
+    "lodash": "^4.17.21",
     "muicss": "^0.9.27",
     "react": "^16.0.0",
     "react-dnd": "^2.5.4",
